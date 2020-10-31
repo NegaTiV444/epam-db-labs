@@ -74,7 +74,7 @@ DELETE FROM dbo.Person WHERE LEN(FullName) > 20;
 DECLARE @Query nvarchar(512) = ' ALTER TABLE dbo.Person DROP CONSTRAINT '
 SELECT @Query = @Query + name + ', '
 FROM sys.objects
-WHERE type IN ('C', 'D') AND parent_object_id = (
+WHERE type IN ('C', 'D', 'PK') AND parent_object_id = (
 SELECT object_id
 FROM sys.objects
 WHERE schema_Name(schema_id) = 'dbo' AND name = 'Person')
