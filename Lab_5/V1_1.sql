@@ -39,8 +39,6 @@ RETURN (
 );
 GO
 
---SELECT * FROM HumanResources.GetOldestDepartmentEmployees(3);
-
 --------------------------- SUBTASK c ---------------------------
 
 SELECT * FROM HumanResources.Department department
@@ -81,5 +79,3 @@ RETURNS @ResultTable TABLE(
 	RETURN
 END;
 GO
-
---SELECT * FROM HumanResources.GetOldestDepartmentEmployees(3);
